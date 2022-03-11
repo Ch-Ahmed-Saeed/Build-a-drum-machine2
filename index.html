@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mark down previewer</title>
+
+<style>
+
+body {
+	background: #0084b8;
+}
+
+#display {
+
+      margin: auto;
+  width: 50%;
+  margin-top: 20%;
+  border: 3px solid green;
+      height: 50px;
+      width: 300px;
+      background: blue;
+      color: #fff;
+}
+
+
+#buttons {
+margin: auto;
+  width: 50%;
+  margin-top: 3%;
+  border: 3px solid green;
+  padding: 10px;
+
+  max-width: 160px;
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #2196F3;
+  padding: 10px;
+
+}
+
+
+
+.drum-pad{
+	 
+	background: white;
+	height: 50px;
+	width: 50px;
+	border-radius: 2px;
+	color: black;
+	border: 1px solid black;
+
+}
+
+</style>	
+
+
+
+</head>
+<body id="SiteBody">
+
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<container id="drum-machine">
+
+<div id="display"> This is empty
+</div>
+
+<!-- //_______________________________________________________ -->
+
+<div id="buttons">
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="daz" onclick="play('Q')" onkeydown="myEvent()"> Q
+
+	<audio class="clip" id="Q" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">
+
+ 
+
+  Your browser does not support the audio element.
+</audio>
+	
+ </button>
+
+ </div>
+
+
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="duz" onclick="play('W')"> W
+
+<audio class="clip" id="W" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+
+ </button>
+
+
+ </div>
+
+ 
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="diz" onclick="play('E')"> E
+
+<audio class="clip" id="E" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg" >	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+
+ </button>
+
+ </div>
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="daaz" onclick="play('A')"> A
+
+<audio class="clip" id="A" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+
+ </button>
+
+ </div>
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="dooz" onclick="play('S')"> S
+
+<audio class="clip" id="S" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+
+ </button>
+
+ </div>
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="deez"  onclick="play('D')"> D
+
+<audio class="clip" id="D" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+
+ </button>
+
+ </div>
+
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="ruz" onclick="play('Z')"> Z 
+
+<audio class="clip" id="Z" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+
+</button>
+
+</div>
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="raaz" onclick="play('X')"> X
+
+<audio class="clip" id="X" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+ 
+  Your browser does not support the audio element.
+</audio>
+ </button>
+
+ </div>
+
+<div class="grid-item">
+<button type="button" class="drum-pad" id="reez" onclick="play('C')"> C
+
+<audio class="clip" id="C" src="http://commondatastorage.googleapis.com/codeskulptor-assets/Collision8-Bit.ogg" type="audio/ogg">	
+
+
+
+  Your browser does not support the audio element.
+</audio>
+ </button>
+
+ </div>
+</div>
+</container>
+
+
+
+
+
+<script  type="text/javascript" >
+
+ 
+// ______________________________________________________
+
+
+//dynamic onlick audio function:
+
+function play(myStr) { 
+
+  var myAudio = document.getElementById(myStr); 
+  myAudio.play(); 
+
+  console.log(myStr , "My str passed");
+
+  var screen = document.getElementById("display"); 
+  // screen.innerHTML = myStr;
+
+  //Now if condition to display the dynamic text on screen:
+
+        if (myStr === "q" || myStr === "Q") {
+
+          screen.innerHTML = "bash";
+
+        } 
+        else if (myStr === "w" || myStr === "W") {
+
+          screen.innerHTML = "base";
+ 
+
+        }
+        else if (myStr === "e" || myStr === "E") {
+
+          screen.innerHTML = "Daz";
+ 
+
+        }
+        else if (myStr === "a" || myStr === "A") {
+
+          screen.innerHTML = "Rush";
+ 
+
+        }
+        else if (myStr === "s" || myStr === "S") {
+
+          screen.innerHTML = "flah";
+ 
+
+        }
+        else if (myStr === "d" || myStr === "D") {
+
+          screen.innerHTML = "zig";
+ 
+
+        }
+        else if (myStr === "z" || myStr === "Z") {
+
+          screen.innerHTML = "rah";
+ 
+
+        }
+        else if (myStr === "x" || myStr === "X") {
+
+          screen.innerHTML = "moh";
+ 
+
+        }
+        else if (myStr === "c" || myStr === "C") {
+
+          screen.innerHTML = "seh";
+ 
+
+        }
+
+} 
+
+
+
+// ______________________________________________________
+
+//Now dynamic keypressing:
+
+window.document.onkeyup = function(event){
+
+        if (event.key === "q" || event.key === "Q") {
+
+          play('Q')   //as function play has alread defined so we can call that here
+
+        } 
+        else if (event.key === "w" || event.key === "W") {
+
+          play('W') 
+
+        }
+        else if (event.key === "e" || event.key === "E") {
+
+          play('E') 
+
+        }
+        else if (event.key === "a" || event.key === "A") {
+
+          play('A') 
+
+        }
+        else if (event.key === "s" || event.key === "S") {
+
+          play('S') 
+
+        }
+        else if (event.key === "d" || event.key === "D") {
+
+          play('D') 
+
+        }
+        else if (event.key === "z" || event.key === "Z") {
+
+          play('Z') 
+
+        }
+        else if (event.key === "x" || event.key === "X") {
+
+          play('X') 
+
+        }
+        else if (event.key === "c" || event.key === "C") {
+
+          play('C') 
+
+        }
+
+      
+
+      }
+
+// ______________________________________________________
+
+
+//Just checking how event works
+
+ //dynamic keypress function
+ 
+ function myEvent(e) {
+    console.log(e);
+  }
+
+// ______________________________________________________
+  
+
+// var x = document.getElementById("myAudio"); 
+
+// function playAudio() { 
+//   x.play(); 
+// } 
+
+function pausE() { 
+  x.pause(); 
+} 	
+
+
+
+</script>
+
+</body>
+</html>
